@@ -55,14 +55,20 @@
 		
 		// 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
 		kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-		    searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
-		        if (status === kakao.maps.services.Status.OK) {
-		            var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-		            detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+			// 클릭한 위도, 경도 정보를 가져옵니다 
+			var latlng = mouseEvent.latLng;
+		    searchDetailAddrFromCoords(latlng, function(result, status) {
+		    	if (status === kakao.maps.services.Status.OK) {
+		    		var detailAddr = '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+		            var detailPoint = '<div>위도: '+ latlng.getLat() +' 경도 : '+ latlng.getLng() +'</div>';
+		            var detailHour = '<div>시간 지정 : </div>';
 		            
 		            var content = '<div class="bAddr">' +
-		                            '<span class="title">법정동 주소정보</span>' + 
-		                            detailAddr + 
+		            				'<span class="title">위치정보</span>' + detailAddr + 
+		                            '<span>좌표값 :</span>' + detailPoint +
+		                            '<span>시간대 :</span>' + detailHour +
+		                            '<span>관할여부 :</span>' +
+		                            '<span>의식상태 :</span>' +
 		                        '</div>';
 		
 		            // 마커를 클릭한 위치에 표시합니다 
