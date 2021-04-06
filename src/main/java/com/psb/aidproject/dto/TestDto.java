@@ -1,30 +1,30 @@
 package com.psb.aidproject.dto;
 
 public class TestDto {
-	private float latitude;
-	private float longitude;
-	private float dstn;
+	private String latitude;
+	private String longitude;
+	private String dstn;
 	private String emd;
-	private int tm;
+	private String tm;
 	private String conscs;
 	private String occurplc;
 	
-	public float getLatitude() {
+	public String getLatitude() {
 		return latitude;
 	}
-	public void setLatitude(float latitude) {
+	public void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
-	public float getLongitude() {
+	public String getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(float longitude) {
+	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
-	public float getDstn() {
+	public String getDstn() {
 		return dstn;
 	}
-	public void setDstn(float dstn) {
+	public void setDstn(String dstn) {
 		this.dstn = dstn;
 	}
 	public String getEmd() {
@@ -33,10 +33,10 @@ public class TestDto {
 	public void setEmd(String emd) {
 		this.emd = emd;
 	}
-	public int getTm() {
+	public String getTm() {
 		return tm;
 	}
-	public void setTm(int tm) {
+	public void setTm(String tm) {
 		this.tm = tm;
 	}
 	public String getConscs() {
@@ -51,6 +51,7 @@ public class TestDto {
 	public void setOccurplc(String occurplc) {
 		this.occurplc = occurplc;
 	}
+	
 	
 	
 
