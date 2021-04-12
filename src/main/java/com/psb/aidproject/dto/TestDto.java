@@ -3,7 +3,7 @@ package com.psb.aidproject.dto;
 public class TestDto {
 	private String latitude;
 	private String longitude;
-	private String dstn;
+	private String jur;
 	private String emd;
 	private String tm;
 	private String conscs;
@@ -21,11 +21,11 @@ public class TestDto {
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
-	public String getDstn() {
-		return dstn;
+	public String getJur() {
+		return jur;
 	}
-	public void setDstn(String dstn) {
-		this.dstn = dstn;
+	public void setJur(String jur) {
+		this.jur = jur;
 	}
 	public String getEmd() {
 		return emd;

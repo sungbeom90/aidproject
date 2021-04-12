@@ -15,7 +15,7 @@ public class PredictService {
 			LoggerFactory.getLogger(PredictService.class);
 	
 	private WebClient webClient = WebClient.builder()
-			.baseUrl("http://192.168.2.7:80")
+			.baseUrl("http://192.168.2.147:80")
 			.build();
 	
 	public String getPredict(TestDto test) {
@@ -23,20 +23,19 @@ public class PredictService {
 		
 		//JSON data
 		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("dstn", test.getDstn());
-		jsonObject.put("latitude", test.getLatitude());
-		jsonObject.put("longitude", test.getLongitude());
-		jsonObject.put("tm", test.getTm());
+		jsonObject.put("emr", "안양동");
+		jsonObject.put("jur", test.getJur());
+		jsonObject.put("x", test.getLatitude());
+		jsonObject.put("y", test.getLongitude());
+		jsonObject.put("stat", test.getTm());
 		jsonObject.put("conscs", test.getConscs());
-		jsonObject.put("emd", test.getEmd());
-		jsonObject.put("occurplc", test.getOccurplc());
+		jsonObject.put("rel", test.getOccurplc());
 		
 		// json객체를 string으로 변경
 		String jsonData = jsonObject.toString();	
 		System.out.println(jsonData.getClass());
 		System.out.println(jsonData);
-		
-		
+				
 		return webClient.post()
 				.uri("/predict")
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
@@ -44,10 +43,6 @@ public class PredictService {
 				.bodyValue(jsonData)
 				.retrieve()
 				.bodyToMono(String.class)
-				.block();
-		
+				.block();		
 	}
-	
-	
-
 }

@@ -1,9 +1,8 @@
 package com.psb.aidproject.dto;
-
 public class HomeDto {
 	private String add;
-	private float longi;
-	private float lat;
+	private String longi;
+	private String lat;
 	private int time;
 	private String juri;
 	private String cons;
@@ -14,16 +13,16 @@ public class HomeDto {
 	public void setAdd(String add) {
 		this.add = add;
 	}
-	public float getLongi() {
+	public String getLongi() {
 		return longi;
 	}
-	public void setLongi(float longi) {
+	public void setLongi(String longi) {
 		this.longi = longi;
 	}
-	public float getLat() {
+	public String getLat() {
 		return lat;
 	}
-	public void setLat(float lat) {
+	public void setLat(String lat) {
 		this.lat = lat;
 	}
 	public int getTime() {
@@ -44,5 +43,4 @@ public class HomeDto {
 	public void setCons(String cons) {
 		this.cons = cons;
 	}
-	
 }

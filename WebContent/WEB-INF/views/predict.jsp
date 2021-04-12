@@ -18,10 +18,7 @@
 		 	<input type="text" id="latitude" name="latitude" value="32.123213"><br><br>
 		 	<label for="longitude">경도 입력 : </label>
 			<input type="text" id="longitude" name="longitude" value="22.142131"><br><br>
-
-			<label for="dstn">이동거리 입력 : </label>
-			<input type="text" id="dstn" name="dstn" value="50.0"><br><br>
-			
+					
 			<label for="emd">읍면동 입력 : </label>
 			<input type="text" id="emd" name="emd" value="가락동"><br><br>
 			
@@ -87,6 +84,12 @@
 				<option value="17" selected>주택가</option>
 				<option value="18">집단거주시설</option>
 				<option value="19">학교/교육시설</option>						 
+			</select>
+			
+			<label for="jur">관할여부 선택 : </label>
+			<select id="jur" name="jur">
+				<option value="0">관할 내</option>
+				<option value="1">관할 외</option>		
 			</select>
 			
 			<div class="d-flex">
