@@ -27,42 +27,42 @@
 			
 			<label for="tm">시간대 선택 : </label>
 			<select id="tm" name="tm">
-				<option value=0>00시</option>
-				<option value=1>01시</option>
-				<option value=2>02시</option>
-				<option value=3>03시</option>
-				<option value=4>04시</option>
-				<option value=5>05시</option>
-				<option value=6>06시</option>
-				<option value=7 selected>07시</option>
-				<option value=8>08시</option>
-				<option value=9>09시</option>
-				<option value=10>10시</option>
-				<option value=11>11시</option>
-				<option value=12>12시</option>
-				<option value=13>13시</option>
-				<option value=14>14시</option>
-				<option value=15>15시</option>
-				<option value=16>16시</option>
-				<option value=17>17시</option>
-				<option value=18>18시</option>
-				<option value=19>19시</option>
-				<option value=20>20시</option>
-				<option value=21>21시</option>
-				<option value=22>22시</option>
-				<option value=23>23시</option>
+				<option value="0">00시</option>
+				<option value="1">01시</option>
+				<option value="2">02시</option>
+				<option value="3">03시</option>
+				<option value="4">04시</option>
+				<option value="5">05시</option>
+				<option value="6">06시</option>
+				<option value="7" selected>07시</option>
+				<option value="8">08시</option>
+				<option value="9">09시</option>
+				<option value="10">10시</option>
+				<option value="11">11시</option>
+				<option value="12">12시</option>
+				<option value="13">13시</option>
+				<option value="14">14시</option>
+				<option value="15">15시</option>
+				<option value="16">16시</option>
+				<option value="17">17시</option>
+				<option value="18">18시</option>
+				<option value="19">19시</option>
+				<option value="20">20시</option>
+				<option value="21">21시</option>
+				<option value="22">22시</option>
+				<option value="23">23시</option>
 			</select>		
 					  
 			<label for="conscs">의식상태 선택 : </label>
 			<select id="conscs" name="conscs">
-				<option value=0>A(Alert)</option>
-				<option value=1>Drowsy</option>
-				<option value=2>P:통증.자극에 반응</option>
-				<option value=3>Semicomma</option>
-				<option value=4>Stupor</option>
-				<option value=5>U(Coma)</option>
-				<option value=6>V(Obtunded)</option>
-				<option value=7 selected>V:언어지시에 반응</option>				
+				<option value="0">A(Alert)</option>
+				<option value="1">Drowsy</option>
+				<option value="2">P:통증.자극에 반응</option>
+				<option value="3">Semicomma</option>
+				<option value="4">Stupor</option>
+				<option value="5">U(Coma)</option>
+				<option value="6">V(Obtunded)</option>
+				<option value="7" selected>V:언어지시에 반응</option>				
 			</select>
 						  
 			<label for="occurplc">사고장소 선택 : </label>

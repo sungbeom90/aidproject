@@ -1,33 +1,30 @@
 package com.psb.aidproject.controller;
 
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
-import javax.xml.ws.ProtocolException;
-
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.psb.aidproject.dto.TestDto;
+import com.psb.aidproject.service.PredictService;
 
 @Controller
 @RequestMapping("/main")
 public class MainController {
 	private static final Logger logger=
 			LoggerFactory.getLogger(MainController.class);
+	
+	@Autowired
+	private PredictService predictService;
+	
 	
 	@GetMapping("/content")
 	public String content() {
@@ -41,7 +38,35 @@ public class MainController {
 		return "predict";
 	}
 	
+
+	@PostMapping("/predict")
+	public String predict(TestDto test) {
+		logger.info("실행");
+		String result = predictService.getPredict(test);
+		System.out.println("여기봐주세요!!!!!!!!!"+result);
+		return "main";
+	}
+}
+		
 	
+	
+	
+	
+	/*
+	@PostMapping("/predict")
+	public String create(TestDto test) {
+		
+		String result = mainService.
+		
+	    return webClient.post()
+	        .uri("/565f699f-b021-4d56-a7ca-88ed1e2fe0e8")
+	        .body(Mono.just(empl), Employee.class)
+	        .retrieve()
+	        .bodyToMono(Employee.class);
+	}
+	*/
+	
+	/*
 	@PostMapping("/predict")
 	public String predict(TestDto test) throws Exception {
 		logger.info("실행");
@@ -110,7 +135,7 @@ public class MainController {
 		
 	}
 }
-		
+*/
 		
 		//JSON 보내는 Output stream
 		/*
