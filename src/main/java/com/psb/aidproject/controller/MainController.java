@@ -1,9 +1,5 @@
 package com.psb.aidproject.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonParser;
 import com.psb.aidproject.dto.TestDto;
 import com.psb.aidproject.service.PredictService;
 
@@ -27,10 +19,7 @@ public class MainController {
 			LoggerFactory.getLogger(MainController.class);
 	
 	@Autowired
-	private PredictService predictService;
-	
-	private JsonParser jsonParser = new JsonParser();
-	
+	private PredictService predictService;	
 	
 	@GetMapping("/content")
 	public String content() {
@@ -39,10 +28,10 @@ public class MainController {
 	}
 	
 	
-	@GetMapping("/predict")
+	@GetMapping("/content2")
 	public String predictForm() {
 		logger.info("실행");
-		return "predict";
+		return "main2";
 	}
 	
 
@@ -50,9 +39,16 @@ public class MainController {
 	public String predict(TestDto test, ModelMap modelmap) {
 		logger.info("실행");
 		String result = predictService.getPredict(test);
-		System.out.println("여기봐주세요!!!!!!!!!"+result.getClass());
-		System.out.println("여기봐주세요!!!!!!!!!"+result);
-		
+		System.out.println("리턴된 json 결과값 : "+result);
+		modelmap.addAttribute("result", result);
+		return "predresult2";
+	}
+	
+	@PostMapping("/predict2")
+	public String predict2(TestDto test, ModelMap modelmap) {
+		logger.info("실행");
+		String result = predictService.getPredict2(test);
+		System.out.println("리턴된 json 결과값 : "+result);
 		modelmap.addAttribute("result", result);
 		return "predresult2";
 	}

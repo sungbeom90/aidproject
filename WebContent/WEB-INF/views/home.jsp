@@ -20,7 +20,7 @@
 			<%-- 내용 --%>
 			<div class="mainCenter mt-5">
 				<%-- 공통 메뉴 --%>
-				<%--<jsp:include page="/WEB-INF/views/include/menu.jsp"/> --%>
+				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 				
 				<div class="content container">
 					<div class="sector">
