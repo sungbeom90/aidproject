@@ -1,5 +1,6 @@
 package com.psb.aidproject.controller;
 
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.psb.aidproject.dto.TestDto;
 import com.psb.aidproject.service.PredictService;
@@ -40,6 +40,7 @@ public class MainController {
 	public String predict(TestDto test) {
 		logger.info("실행");
 		String result = predictService.getPredict(test);
+		System.out.println("여기봐주세요!!!!!!!!!"+result.getClass());
 		System.out.println("여기봐주세요!!!!!!!!!"+result);
 		return "main";
 	}

@@ -32,10 +32,10 @@ public class PredictService {
 		jsonObject.put("rel", test.getOccurplc());
 		
 		// json객체를 string으로 변경
-		String jsonData = jsonObject.toString();	
+		String jsonData = jsonObject.toString();
 		System.out.println(jsonData.getClass());
 		System.out.println(jsonData);
-				
+	
 		return webClient.post()
 				.uri("/predict")
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
@@ -43,6 +43,6 @@ public class PredictService {
 				.bodyValue(jsonData)
 				.retrieve()
 				.bodyToMono(String.class)
-				.block();		
+				.block();
 	}
 }
