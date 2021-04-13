@@ -127,7 +127,7 @@
 			var latlng = mouseEvent.latLng;
 		    searchDetailAddrFromCoords(latlng, function(result, status) {
 	    		if (status === kakao.maps.services.Status.OK) {
-	    			var detailAddr = '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+	    			var detailAddr = '<div>지번 주소 : ' + result[0].address.region_3depth_name + '</div>';
 		            var latitude = '<div>위도: '+ latlng.getLat()+ '</div>';
 		            var longitude = '<div>경도 : '+ latlng.getLng() +'</div>';
 		            var detailHour = '<div>시간 지정 : </div>';
@@ -147,8 +147,10 @@
 		           /*  document.getElementById("fadd").innerHTML = detailAddr;
 		            document.getElementById("flongi").innerHTML = longitude;
 		            document.getElementById("flat").innerHTML = latitude; */
+		            
+		            result[0].address.address_name = 
 	
-		            document.getElementById("fadd").value = result[0].address.address_name;
+		            document.getElementById("fadd").value = result[0].address.region_3depth_name;
 		            document.getElementById("flat").value = latlng.getLat();
 		            document.getElementById("flongi").value = latlng.getLng();
 		           
