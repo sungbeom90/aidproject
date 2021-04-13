@@ -68,6 +68,18 @@
 			    // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 			    infowindow.open(map, marker); 
 			}
+			
+			var circle = new kakao.maps.Circle({
+				map: map, // 원을 표시할 지도 객체
+				center : new kakao.maps.LatLng(jsonData["safe_lat"], jsonData["safe_long"]), // 지도의 중심 좌표
+				radius : 50, // 원의 반지름 (단위 : m)
+				fillColor: '#FF0000', // 채움 색
+				fillOpacity: 0.5, // 채움 불투명도
+				strokeWeight: 3, // 선의 두께
+				strokeColor: '#FF0000', // 선 색
+				strokeOpacity: 0.9, // 선 투명도
+				strokeStyle: 'solid' // 선 스타일
+			});
 		</script>
 	</body>
 </html>

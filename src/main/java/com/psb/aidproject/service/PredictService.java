@@ -25,7 +25,7 @@ public class PredictService {
 		
 		//JSON data
 		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("emr", "안양동");
+		jsonObject.put("emr", test.getEmd());
 		jsonObject.put("jur", test.getJur());
 		jsonObject.put("x", test.getLatitude());
 		jsonObject.put("y", test.getLongitude());

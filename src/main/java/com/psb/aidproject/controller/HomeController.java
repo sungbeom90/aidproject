@@ -17,7 +17,7 @@ public class HomeController {
 	@RequestMapping("/")
 	public String home() {
 		logger.info("실행");
-		return "redirect:main/content";
+		return "home";
 	}
 }
 	
