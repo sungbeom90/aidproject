@@ -54,7 +54,7 @@ public class MainController {
 		System.out.println("여기봐주세요!!!!!!!!!"+result);
 		
 		modelmap.addAttribute("result", result);
-		return "predresult";
+		return "predresult2";
 	}
 	
 }
