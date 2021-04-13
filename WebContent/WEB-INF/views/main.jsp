@@ -127,7 +127,7 @@
 			var latlng = mouseEvent.latLng;
 		    searchDetailAddrFromCoords(latlng, function(result, status) {
 	    		if (status === kakao.maps.services.Status.OK) {
-	    			var detailAddr = '<div>지번 주소 : ' + result[0].address.region_3depth_name + '</div>';
+	    			var detailAddr = '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
 		            var latitude = '<div>위도: '+ latlng.getLat()+ '</div>';
 		            var longitude = '<div>경도 : '+ latlng.getLng() +'</div>';
 		            var detailHour = '<div>시간 지정 : </div>';
@@ -142,13 +142,7 @@
 	
 		            // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
 		            infowindow.setContent(content);
-		            infowindow.open(map, marker);
-	
-		           /*  document.getElementById("fadd").innerHTML = detailAddr;
-		            document.getElementById("flongi").innerHTML = longitude;
-		            document.getElementById("flat").innerHTML = latitude; */
-		            
-		            result[0].address.address_name = 
+		            infowindow.open(map, marker);		          
 	
 		            document.getElementById("fadd").value = result[0].address.region_3depth_name;
 		            document.getElementById("flat").value = latlng.getLat();

@@ -21,6 +21,8 @@ public class PredictService {
 	public String getPredict(TestDto test) {
 		logger.info("실행");
 		
+	
+		
 		//JSON data
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("emr", "안양동");
