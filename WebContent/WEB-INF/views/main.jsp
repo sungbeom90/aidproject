@@ -4,118 +4,24 @@
 	<head>
 	<meta charset="UTF-8">
 	<title>구급도착시간 예측</title>
+	<link rel="stylesheet" href="common.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/main.css">
-	<style>
-		.map_wrap {position:relative;width:100%;height:300px;}
-		.title {font-weight:bold;display:block;}
-		.hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
-		#centerAddr {display:block;margin-top:2px;font-weight: normal;}
-		.bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
-	</style>
+	<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/preresult.css">
+	<link rel="stylesheet" href="<%=application.getContextPath()%>/WEB-INF/views/main.jsp">
 	</head>
 	<body>
-		<div class="wrap">
-			<%-- 공통 헤더 --%>
-			<%--<jsp:include page="/WEB-INF/views/include/header.jsp"/> <!-- 실행을하고 결과를 넣는다. --> --%>			
-			<%-- 내용 --%>
-			<div class="mainCenter mt-5">
-				<%-- 공통 메뉴 --%>
-				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
-				
-						
-				<div class="content container">
-					<div class="sector">
-						<div class="map_wrap">
-							<div id="map" style="width:100%;height:600px;position:relative;overflow:hidden;"></div>
-							<div class="hAddr">
-								<span class="title">지도중심기준 행정동 주소정보</span>
-								<span id="centerAddr"></span>
-							</div>
-						    <form action="predict" method="post">		    	
-						    	<input type="hidden" id ="pick_lat" name="pick_lat" value="">
-						    	<input type="hidden" id="pick_long" name='pick_long' value="">
-						    	<input type="hidden" id="address_emd" name='address_emd' value="">
-						    	<label for="statmnt_tm">시간대 선택 : </label>
-								<select id="statmnt_tm" name="statmnt_tm">
-									<option value="0">00시</option>
-									<option value="1">01시</option>
-									<option value="2">02시</option>
-									<option value="3">03시</option>
-									<option value="4">04시</option>
-									<option value="5">05시</option>
-									<option value="6">06시</option>
-									<option value="7" selected>07시</option>
-									<option value="8">08시</option>
-									<option value="9">09시</option>
-									<option value="10">10시</option>
-									<option value="11">11시</option>
-									<option value="12">12시</option>
-									<option value="13">13시</option>
-									<option value="14">14시</option>
-									<option value="15">15시</option>
-									<option value="16">16시</option>
-									<option value="17">17시</option>
-									<option value="18">18시</option>
-									<option value="19">19시</option>
-									<option value="20">20시</option>
-									<option value="21">21시</option>
-									<option value="22">22시</option>
-									<option value="23">23시</option>
-								</select>
-							    <label for="jurisd">관할여부 선택 : </label>
-								<select id="jurisd" name="jurisd">
-									<option value="0">관할 내</option>
-									<option value="1">관할 외</option>		
-								</select>
-								<label for="conscs">의식상태 선택 : </label>
-								<select id="conscs" name="conscs">
-									<option value="0" selected >깨어있음(Alert)</option>
-									<option value="1">나른함(Drowsy)</option>
-									<option value="2">통증.자극에 반응(Pain)</option>
-									<option value="3">반 혼수상태(Semicomma)</option>
-									<option value="4">혼미함(Stupor)</option>
-									<option value="5">혼수상태(Coma)</option>
-									<option value="6">둔함(Obtunded)</option>
-									<option value="7">언어지시에 반응(Voice)</option>				
-								</select>
-								<label for="occurplc">사고장소 선택 : </label>
-								<select id="occurplc" name="occurplc">
-									<option value="0">가정</option>
-									<option value="1">고속도로</option>
-									<option value="2">공공장소</option>
-									<option value="3">공장/산업/건설시설</option>
-									<option value="4">기타</option>
-									<option value="5">도로외교통지역</option>
-									<option value="6">바다/강/산/논밭</option>
-									<option value="7">사무실</option>
-									<option value="8">상업시설</option>
-									<option value="9">숙박시설</option>
-									<option value="10">스키장</option>
-									<option value="11">오락/문화시설</option>
-									<option value="12">운동시설</option>
-									<option value="13">유흥장소</option>
-									<option value="14">의료관련시설</option>
-									<option value="15">일반도로</option>
-									<option value="16">일차산업장</option>					
-									<option value="17" selected>주택가</option>
-									<option value="18">집단거주시설</option>
-									<option value="19">학교/교육시설</option>						 
-								</select>
-								<div class="d-flex">
-									<input class="btn btn-info btn-sm flex-fill" type="submit" value="입력"><br/>
-									<input class="btn btn-danger btn-sm flex-fill" type="reset" value="취소"><br/>
-								</div>
-							</form>			
-						</div>
-					</div>
-				</div>
+		<jsp:include page="preresult_css.jsp"/>
+		<div class="map_wrap">
+			    <div id="map" style="width:100%;height:950px;"></div>
+			    <div class="hAddr">
+			        <span class="title">지도중심기준 행정동 주소정보</span>
+			        <span id="centerAddr"></span>
+			    </div>			    
 			</div>
-		</div>
-	
 	
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd9223ef3c76f2ba38d80c2db45680c9&libraries=services"></script>
 		<script>
@@ -163,7 +69,7 @@
 		            document.getElementById("address_emd").value = result[0].address.region_3depth_name;
 		            document.getElementById("pick_lat").value = latlng.getLat();
 		            document.getElementById("pick_long").value = latlng.getLng();
-		           
+		            
 		        }
 		    });
 		});

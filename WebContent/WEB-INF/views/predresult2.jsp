@@ -8,20 +8,28 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-		<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+		<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/preresult.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery.min.js"></script>
 	</head>
 	
 
 	<body>
-		<div id="map" style="width:100%;height:350px;"></div>
+		<jsp:include page="preresult_css.jsp" />
+		<div id="map" style="width:100%;height:950px;"></div>
 	
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd9223ef3c76f2ba38d80c2db45680c9&libraries=services"></script>
 		<script>
+			
+			
 			// controller가 전달한 json 데이터		
 			var jsonData = ${result};
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
 			    mapOption = { 
-			        center: new kakao.maps.LatLng(jsonData["pick_lat"], jsonData["pick_long"]), // 지도의 중심좌표
+			        center: new kakao.maps.LatLng(jsonData["safe_lat"], jsonData["safe_long"]), // 지도의 중심좌표
 			        level: 3 // 지도의 확대 레벨
 			    };
 			
@@ -33,11 +41,6 @@
 			        title: '출동센터', 
 			        latlng: new kakao.maps.LatLng(jsonData["safe_lat"], jsonData["safe_long"]),
 			        text : '출동센터'		    
-			    },
-			    {
-			        title: '신고장소', 
-			        latlng: new kakao.maps.LatLng(jsonData["pick_lat"], jsonData["pick_long"]),
-			        text: jsonData["answer"] + '분 소요 예정' // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다
 			    }			   
 			];
 			
@@ -70,16 +73,17 @@
 			}
 			
 			var circle = new kakao.maps.Circle({
-				map: map, // 원을 표시할 지도 객체
-				center : new kakao.maps.LatLng(jsonData["safe_lat"], jsonData["safe_long"]), // 지도의 중심 좌표
-				radius : 50, // 원의 반지름 (단위 : m)
-				fillColor: '#FF0000', // 채움 색
-				fillOpacity: 0.5, // 채움 불투명도
-				strokeWeight: 3, // 선의 두께
-				strokeColor: '#FF0000', // 선 색
-				strokeOpacity: 0.9, // 선 투명도
-				strokeStyle: 'solid' // 선 스타일
+			    center : new kakao.maps.LatLng(jsonData["safe_lat"], jsonData["safe_long"]),  // 원의 중심좌표 입니다 
+			    radius: jsonData["answer"]*1000, // 미터 단위의 원의 반지름입니다 
+			    strokeWeight: 5, // 선의 두께입니다 
+			    strokeColor: '#75B8FA', // 선의 색깔입니다
+			    strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+			    fillColor: '#CFE7FF', // 채우기 색깔입니다
+			    fillOpacity: 0.7  // 채우기 불투명도 입니다   
 			});
+			
+			circle.setMap(map);
+			
 		</script>
 	</body>
 </html>

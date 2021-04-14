@@ -50,9 +50,9 @@ public class PredictService {
 		
 		//JSON data
 		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("safe_senter", test.getSafe_senter());
+		jsonObject.put("safe_center", test.getSafe_senter());
 		jsonObject.put("jurisd", test.getJurisd());
-		jsonObject.put("statmnt_tm", test.getStatmnt_tm());
+		jsonObject.put("statmt_tm", test.getStatmnt_tm());
 		jsonObject.put("move_tm", test.getMove_tm());
 		jsonObject.put("conscs", test.getConscs());		
 		

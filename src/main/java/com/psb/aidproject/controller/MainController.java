@@ -41,7 +41,7 @@ public class MainController {
 		String result = predictService.getPredict(test);
 		System.out.println("리턴된 json 결과값 : "+result);
 		modelmap.addAttribute("result", result);
-		return "predresult2";
+		return "predresult";
 	}
 	
 	@PostMapping("/predict2")
