@@ -12,9 +12,6 @@
 
 
 <div class="left-side-bar" id="sidebar">
-        <div class="status-ico">
-           <img id="threebars" src="<%=application.getContextPath()%>/resources/css/threebars.png">
-        </div>
 
         <ul>
             <li>
@@ -50,11 +47,13 @@
 							<option value="22">22시</option>
 							<option value="23">23시</option>
 						</select>
+						<br>
 					    <label for="jurisd">관할여부 선택 : </label>
 						<select id="jurisd" name="jurisd">
 							<option value="0">관할 내</option>
 							<option value="1">관할 외</option>		
 						</select>
+						<br>
 						<label for="conscs">의식상태 선택 : </label>
 						<select id="conscs" name="conscs">
 							<option value="0" selected >깨어있음(Alert)</option>
@@ -66,6 +65,7 @@
 							<option value="6">둔함(Obtunded)</option>
 							<option value="7">언어지시에 반응(Voice)</option>				
 						</select>
+						<br>
 						<label for="occurplc">사고장소 선택 : </label>
 						<select id="occurplc" name="occurplc">
 							<option value="0">가정</option>
@@ -89,9 +89,11 @@
 							<option value="18">집단거주시설</option>
 							<option value="19">학교/교육시설</option>						 
 						</select>
+						<p></p>
+						<br>
 						<div class="d-flex">
-							<input class="btn btn-info btn-sm flex-fill" type="submit" value="입력"><br/>
-							<input class="btn btn-danger btn-sm flex-fill" type="reset" value="취소"><br/>
+							<input id="btn-01" class="btn btn-info btn-sm flex-fill" type="submit" value="입력"><br/>
+							<input id="btn-02" class="btn btn-danger btn-sm flex-fill" type="reset" value="취소"><br/>
 						</div>
 					</form>
 				</li>
@@ -102,10 +104,10 @@
                     	<form action="predict2" method="post">
 					    	<label for="safe_senter">센터명 입력 : </label>
 							<input type="text" id="safe_senter" name="safe_senter" value="대화119안전센터">
-													    	
+							<br>						    	
 					    	<label for="move_tm">소요시간 입력 : </label>
 							<input type="text" id="move_tm" name="move_tm" value="5.0">
-							
+							<br>
 					    	<label for="statmnt_tm">시간대 선택 : </label>
 							<select id="statmnt_tm" name="statmnt_tm">
 								<option value="0">00시</option>
@@ -133,11 +135,13 @@
 								<option value="22">22시</option>
 								<option value="23">23시</option>
 							</select>
+							<br>
 						    <label for="jurisd">관할여부 선택 : </label>
 							<select id="jurisd" name="jurisd">
 								<option value="0" selected>관할 내</option>
 								<option value="1">관할 외</option>		
 							</select>
+							<br>
 							<label for="conscs">의식상태 선택 : </label>
 							<select id="conscs" name="conscs">
 								<option value="0">깨어있음(Alert)</option>
@@ -148,10 +152,12 @@
 								<option value="5" selected>혼수상태(Coma)</option>
 								<option value="6">둔함(Obtunded)</option>
 								<option value="7">언어지시에 반응(Voice)</option>				
-							</select>								
-							<div class="d-flex">
-								<input class="btn btn-info btn-sm flex-fill" type="submit" value="입력"><br/>
-								<input class="btn btn-danger btn-sm flex-fill" type="reset" value="취소"><br/>
+							</select>
+							<p></p>			
+							<br>					
+							<div id="d-flex2" class="d-flex">
+								<input id="btn-01" class="btn btn-info btn-sm flex-fill" type="submit" value="입력"><br/>
+								<input id="btn-02" class="btn btn-danger btn-sm flex-fill" type="reset" value="취소"><br/>
 							</div>
 						</form>	
                     </li>
