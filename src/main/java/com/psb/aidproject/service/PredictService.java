@@ -22,13 +22,13 @@ public class PredictService {
 		logger.info("실행");
 		
 		//JSON data
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("x", test.getPick_lat());
-		jsonObject.put("y", test.getPick_long());
-		jsonObject.put("jur", test.getJurisd());
-		jsonObject.put("stat", test.getStatmnt_tm());
-		jsonObject.put("emr", test.getAddress_emd());
-		jsonObject.put("rel", test.getOccurplc());
+		JSONObject jsonObject = new JSONObject();		
+		jsonObject.put("pick_lat", test.getPick_lat());
+		jsonObject.put("pick_long", test.getPick_long());
+		jsonObject.put("jurisd", test.getJurisd());
+		jsonObject.put("statmnt_tm", test.getStatmnt_tm());
+		jsonObject.put("address_emd", test.getAddress_emd());
+		jsonObject.put("occurplc", test.getOccurplc());
 		jsonObject.put("conscs", test.getConscs());
 		
 		// json객체를 string으로 변경

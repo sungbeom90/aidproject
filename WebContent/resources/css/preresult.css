@@ -5,11 +5,46 @@
   
 }
 
-#d-flex{
-	margin-top: 3px;
+#inform{
+	display: block;
+    padding: 10%;
+    white-space: nowrap;
+    text-decoration: none;
+    color:#0475f4;
+    font-weight:bold;
+    text-align:center;
+    border:5px solid;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+#inform:hover {
+    color: #fff;
+    background-color: #0475f4;
+}
+
+select {
+  width:160px;
+  height:25px;
+  font-size:16px;
+}
+
+#safe_senter{
+  width:160px;
+  height:25px;
+  font-size:16px;
+}
+
+#move_tm {
+  width:160px;
+  height:25px;
+  font-size:16px;
 }
 
 #btn-01{
+	width:163px;
 	color: #fff;
     background-color: #0475f4;
     border-color: #fff;
@@ -17,7 +52,25 @@
     border-width: 2px;
 }
 
+#btn-01:hover{
+    color: #0475f4;
+    background-color: #fff;
+    border-color: #0475f4;
+    border-radius: 15px;
+    border-width: 2px;
+    
+}
+
 #btn-02{
+	width:163px;
+	color: #fff;
+    background-color: #0475f4;
+    border-color: #fff;
+    border-radius: 15px;
+    border-width: 2px;
+}
+
+#btn-02:hover{
 	color: #0475f4;
     background-color: #fff;
     border-color: #0475f4;
@@ -53,33 +106,22 @@ a {
     background-color: #fff;
 }
 
-#threebars{
-	margin-top:15px;
-	width: 20px;
-  	height: 20px;
-	overflow:hidden;
-	object-fit:cover
+body {
+    height: 100%
 }
 
-body {
-    height: 10000px;
+th{
+	width: 110px;
+	text-align:center;
 }
 
 .left-side-bar {
     background-color: #fff;
     height: 100%;
-    width: 300px;
+    width: 330px;
     position: fixed;
     transition: left .3s;
-}
-
-.left-side-bar > .status-ico {
-    text-align: right;
-    padding: 10px;
-}
-
-.left-side-bar > ul li {
-    position: relative;
+    padding-top: 2%;
 }
 
 .left-side-bar ul {
@@ -88,13 +130,18 @@ body {
     padding: 0;
 }
 
-.left-side-bar ul > li > a {
+.left-side-bar > a {
     display: block;
     padding: 20%;
     white-space: nowrap;
     text-decoration: none;
     color:#0475f4;
     font-weight:bold;
+    text-align:center;
+    border:5px solid;
+    border-radius: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .left-side-bar:hover {
@@ -105,7 +152,9 @@ body {
     display: block;
 }
 
-.left-side-bar ul > li:hover > a {
+.left-side-bar > a:hover {
     color: #fff;
     background-color: #0475f4;
 }
+
+
