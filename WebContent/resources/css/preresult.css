@@ -10,7 +10,7 @@
     padding: 10%;
     white-space: nowrap;
     text-decoration: none;
-    color:#0475f4;
+    color:#F45A5A;
     font-weight:bold;
     text-align:center;
     border:5px solid;
@@ -19,10 +19,9 @@
     padding-top:10px;
     padding-bottom:10px;
 }
-
 #inform:hover {
     color: #fff;
-    background-color: #0475f4;
+    background-color: #F45A5A;
 }
 
 select {
@@ -46,16 +45,16 @@ select {
 #btn-01{
 	width:163px;
 	color: #fff;
-    background-color: #0475f4;
+    background-color: #F45A5A;
     border-color: #fff;
     border-radius: 15px;
     border-width: 2px;
 }
 
 #btn-01:hover{
-    color: #0475f4;
+    color: #F45A5A;
     background-color: #fff;
-    border-color: #0475f4;
+    border-color: #F45A5A;
     border-radius: 15px;
     border-width: 2px;
     
@@ -64,16 +63,16 @@ select {
 #btn-02{
 	width:163px;
 	color: #fff;
-    background-color: #0475f4;
+    background-color: #F45A5A;
     border-color: #fff;
     border-radius: 15px;
     border-width: 2px;
 }
 
 #btn-02:hover{
-	color: #0475f4;
+	color: #F45A5A;
     background-color: #fff;
-    border-color: #0475f4;
+    border-color: #F45A5A;
     border-radius: 15px;
     border-width: 2px;
 }
@@ -130,12 +129,12 @@ th{
     padding: 0;
 }
 
-.left-side-bar > a {
+.left-side-bar_a {
     display: block;
     padding: 20%;
     white-space: nowrap;
     text-decoration: none;
-    color:#0475f4;
+    color:#F45A5A;
     font-weight:bold;
     text-align:center;
     border:5px solid;
@@ -154,7 +153,7 @@ th{
 
 .left-side-bar > a:hover {
     color: #fff;
-    background-color: #0475f4;
+    background-color: #F45A5A;
 }
 
 

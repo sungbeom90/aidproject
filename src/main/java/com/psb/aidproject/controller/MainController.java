@@ -19,7 +19,25 @@ public class MainController {
 			LoggerFactory.getLogger(MainController.class);
 	
 	@Autowired
-	private PredictService predictService;	
+	private PredictService predictService;
+	
+	@GetMapping("/info")
+	public String info() {
+		logger.info("실행");
+		return "info";
+	}
+	
+	@GetMapping("/detail1")
+	public String detail1() {
+		logger.info("실행");
+		return "info_detail1";
+	}
+	
+	@GetMapping("/detail2")
+	public String detail2() {
+		logger.info("실행");
+		return "info_detail2";
+	}
 	
 	@GetMapping("/content")
 	public String content() {
