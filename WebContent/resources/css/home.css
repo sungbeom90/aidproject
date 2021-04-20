@@ -17,9 +17,9 @@ p{font-family:'InfinitySans-RegularA1';
  }
 /* Reset CSS */
 * {	margin:0; padding:0; font-family:TmoneyRoundWindExtraBold; }
- ul {list-style: none;} 
- ol { list-style-position: inside;}
- li {font-family:'InfinitySans-RegularA1';}
+ul {list-style: none;} 
+ol { list-style-position: inside;}
+li {font-family:'InfinitySans-RegularA1';}
 img { border:0; }
 /* Background Image */
 .wrap {display:flex; flex-direction:column; position:fixed; width:100%; height:100%; no-repeat center bottom; background-size:cover; overflow-y:auto;}*/
@@ -39,7 +39,6 @@ img { border:0; }
 	height: 400px;
 	position: relative;	
 }
-
 .head_text {
 	position: absolute;
 	top: 15rem;

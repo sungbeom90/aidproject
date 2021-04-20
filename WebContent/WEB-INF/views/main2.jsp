@@ -3,31 +3,27 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>좌표로 주소를 얻어내기</title>
-	<link rel="stylesheet" href="common.css">
+	<title>골든타임 범위 예측</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/main2.css">
-	<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/preresult.css">
-	<link rel="stylesheet" href="<%=application.getContextPath()%>/WEB-INF/views/main.jsp">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/main.css">
+	<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/sidebar.css">
 	</head>
 	<body>
-		<jsp:include page="preresult_css.jsp"/>
-		    <div class="map_wrap">
-		    <div id="map" style="width:100%;height:950px;"></div>
-		
+		<jsp:include page="sidebar.jsp"/>
+		<div class="map_wrap">
+		    <div id="map" style="width:100%;height:950px;"></div>		
 		    <div id="menu_wrap" class="bg_white">
-		        <div class="option">
-		            <div>
-		                <form onsubmit="searchPlaces(); return false;">
-		                    키워드 : <input type="text" value="안양 119안전센터" id="keyword" size="15"> 
-		                    <button type="submit">검색하기</button> 
-		                </form>
-		            </div>
+		        <div class="option">		           
+	                <form onsubmit="searchPlaces(); return false;">
+	                   	 키워드 : <input type="text" value="안양 119안전센터" id="keyword" size="15"> 
+	                    <button type="submit">검색하기</button> 
+	                </form>
 		        </div>
-		        <hr>
+		        <hr/>
 		        <ul id="placesList"></ul>
 		        <div id="pagination"></div>
 		    </div>

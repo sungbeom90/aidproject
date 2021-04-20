@@ -4,23 +4,23 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>여러개 마커 표시하기</title>
+		<title>골든타임 범위 결과</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/preresult.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/main.css">
+		<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/sidebar.css">
 		<script src="https://code.jquery.com/jquery.min.js"></script>
 	</head>
 	
 
 	<body>
-		<jsp:include page="preresult_css.jsp" />
-		<div id="map" style="width:100%;height:950px;"></div>
-	
+		<jsp:include page="sidebar.jsp" />
+		<div class="map_wrap">
+			<div id="map" style="width:100%;height:950px;"></div>
+		</div>		  
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd9223ef3c76f2ba38d80c2db45680c9&libraries=services"></script>
 		<script>
 			
